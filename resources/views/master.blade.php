@@ -47,7 +47,7 @@ body{
         	<a class="navbar-brand" href="#">
         	<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Usuario</a>
 
-        	<a class="navbar-brand" href="#">
+        	<a class="navbar-brand" href="/auth/logout">
         	<span class="glyphicon glyphicon-off" aria-hidden="true"></span> Salir</a>
         	</ul>
  	    	</div>
