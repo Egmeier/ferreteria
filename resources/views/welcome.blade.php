@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+<html lang="es">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Alameda y Cia</title>
+ {!! Html::style('assets/css/bootstrap.css') !!}
+  {!! Html::script('assets/js/jquery-2.1.4.min.js') !!}
+    {!! Html::script('assets/js/bootstrap.min.js') !!}
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+</head>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login</div>
+                    <div class="panel-body">
+                        {!! Form::open(['route' => 'auth/login', 'class' => 'form']) !!}
+                            <div class="form-group">
+                                <label>Email</label>
+                                {!! Form::email('email', '', ['class'=> 'form-control']) !!}
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                {!! Form::password('password', ['class'=> 'form-control']) !!}
+                            </div>
+                            <div class="checkbox">
+                                <label><input name="remember" type="checkbox"> Remember me</label>
+                            </div>
+                            <div>                            
+                                {!! Form::submit('login',['class' => 'btn btn-primary']) !!}
+                            </div>
+                        {!! Form::close() !!}
+                    </div> 
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
