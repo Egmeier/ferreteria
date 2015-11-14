@@ -1,4 +1,4 @@
-<h1 class="text-primary">Control de Productos</h1>
+<h1 class="text-primary">Control de Inventario</h1>
 
 <table class="table table-bordered dataTable" id="MyTable">
   <thead>
@@ -8,7 +8,9 @@
         <th class="text-center">Tipo</th>
         <th class="text-center">Precio</th>
         <th class="text-center">Inventario</th>
+        @if(Auth::User()->hasRole(1))
         <th class="text-center">Acciones</th>
+        @endif
     </tr>
   </thead>
   <tbody>
@@ -19,7 +21,8 @@
             <td class="text-center">{{ $producto->tipo }}</td>
             <td class="text-center">{{ $producto->precio }}</td>
             <td class="text-center">{{ $producto->inventario }}</td>
-
+@if(Auth::User()->hasRole(1))
+        
         {!! Form::open(['route' => ['inventario.destroy', $producto->id_producto], 'method' => 'DELETE']) !!}
 
             <td class="text-center">
@@ -32,7 +35,8 @@
             </td>
 
         {!! Form::close() !!}
-
+        
+        @endif
         </tr>
     @endforeach
   </tbody>

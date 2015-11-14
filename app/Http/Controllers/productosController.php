@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\producto;
+use Illuminate\Support\Facades\Auth;
 
 class productosController extends Controller
 {
@@ -27,7 +28,10 @@ class productosController extends Controller
      */
     public function create()
     {
+        if(Auth::User()->hasRole(1))
         return view('inventario.create');
+        else
+        return redirect('inventario');
     }
 
     /**
@@ -38,7 +42,8 @@ class productosController extends Controller
      */
     public function store(Request $request)
     {
-
+        if(Auth::User()->hasRole(1))
+        {
         $producto=new producto;
         $producto->descripcion= $request->input('descripcion');
         $producto->tipo= $request->input('tipo');
@@ -47,6 +52,10 @@ class productosController extends Controller
 
         $producto->save();
         return redirect()->route('inventario.index');
+        }
+        else
+        return redirect('inventario');
+
 
     }
 
@@ -69,8 +78,13 @@ class productosController extends Controller
      */
     public function edit($id_producto)
     {
+        if(Auth::User()->hasRole(1))
+        {
         $producto=producto::find($id_producto);
         return view('inventario.edit')->with('producto',$producto);
+        }
+        else
+        return redirect('inventario');
     }
 
     /**
@@ -82,6 +96,8 @@ class productosController extends Controller
      */
     public function update(Request $request, $id_producto)
     {
+        if(Auth::User()->hasRole(1))
+        {
         $producto=producto::find($id_producto);
         $producto->descripcion= $request->input('descripcion');
         $producto->tipo= $request->input('tipo');
@@ -90,6 +106,9 @@ class productosController extends Controller
 
         $producto->save();
         return redirect()->route('inventario.index');
+        }
+        else
+        return redirect('inventario');
     }
 
     /**
@@ -100,9 +119,14 @@ class productosController extends Controller
      */
     public function destroy($id_producto)
     {
+        if(Auth::User()->hasRole(1))
+        {
         $producto=producto::find($id_producto);
         $producto->delete();
         return redirect()->route('inventario.index');
+        }
+        else
+        return redirect('inventario');
     }
 
     

@@ -29,6 +29,12 @@
   </div>
 
   <div>
+  Rol
+  <input type="number" name="rol">
+  </div>
+
+
+  <div>
   <button type="submit">Register</button>
   </div>
 </form>

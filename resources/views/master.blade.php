@@ -5,9 +5,13 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Alameda y Cia</title>
- {!! Html::script('assets/js/jquery-2.1.4.min.js') !!}
- {!! Html::style('assets/css/bootstrap.css') !!}
- {!! Html::script('assets/js/bootstrap.min.js') !!}
+ 
+  {!! Html::style('assets/css/bootstrap.css') !!}
+  {!! Html::style('assets/css/dataTables.bootstrap.css') !!}
+  {!! Html::script('assets/js/jquery-2.1.4.min.js') !!}
+  {!! Html::script('assets/js/jquery.dataTables.js') !!}
+  {!! Html::script('assets/js/bootstrap.min.js') !!}
+  {!! Html::script('assets/js/dataTables.bootstrap.js') !!}
 
 <style type="text/css">
 body{
@@ -45,7 +49,7 @@ body{
         	<div>
         	<ul class="nav navbar-nav navbar-right">
         	<a class="navbar-brand" href="#">
-        	<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Usuario</a>
+        	<span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{Auth::User()->name}}</a>
 
         	<a class="navbar-brand" href="/auth/logout">
         	<span class="glyphicon glyphicon-off" aria-hidden="true"></span> Salir</a>
@@ -58,17 +62,28 @@ body{
  	<div class="row">
   
  </div>
- 
+
+
  <div class="row">
-  	<div class="list-group">
+  	<div class="list-group"> 
+    
+    <a href="/home">
+  	<button type="button" class="list-group-item"> 
+  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Inicio</strong></button></span>
+    </a>
+
+    <a href="/inventario">
   	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Inicio</strong></button>
+  	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Inventario</strong></button></span>
+    </a>
+    
+    
   	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Inventario</strong>
+  	<span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button></span>
+    
+
   	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button>
-  	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Documentos</strong></button>
+  	<span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Documentos</strong></button></span>
   	
   	
 </div>
@@ -95,5 +110,16 @@ body{
 
  <!-- Scripts -->
  {!! Html::script('assets/js/bootstrap.min.js') !!}
+ <script>
+$(document).ready(function(){
+            $('#MyTable').dataTable({
+              language: {
+   
+              url: '/assets/Spanish.json'
+              }
+            });
+        });
+
+</script>
 </body>
 </html>

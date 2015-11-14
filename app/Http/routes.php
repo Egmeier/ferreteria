@@ -17,22 +17,6 @@ Route::get('/', function () {
 
 });
 
-Route::get('/home',function()
-{
-	return view('home');
-});
-
-Route:: get('/calendario',function()
-{
-	return view('calendario');
-});
-
-Route:: get('/inventario',function()
-{
-	return view('inventario');
-});
-
-
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -43,7 +27,23 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 
-Route::resource('inventario', 'productosController');
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+	Route::get('/home',function()
+    {
+	return view('home');
+    });
+
+    Route:: get('/calendario',function()
+    {
+	return view('calendario');
+    });
+
+    Route::resource('inventario', 'productosController');
+
+});
 
 
 

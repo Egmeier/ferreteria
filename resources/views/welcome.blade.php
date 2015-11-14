@@ -29,7 +29,7 @@
                                 {!! Form::password('password', ['class'=> 'form-control']) !!}
                             </div>
                             <div class="checkbox">
-                                <label><input name="remember" type="checkbox"> Remember me</label>
+                                <label><input name="remember" type="checkbox"> Recordar Usuario</label>
                             </div>
                             <div>                            
                                 {!! Form::submit('login',['class' => 'btn btn-primary']) !!}

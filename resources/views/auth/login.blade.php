@@ -27,23 +27,24 @@
   <div class="row">
   <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
-  <div class="panel-heading">Login</div>
+  <div class="panel-heading"><span style= "font-size: 18px;" class= "glyphicon glyphicon-triangle-right"></span>
+<span style= "font-size: 20px;"> Iniciar Sesión</span></div>
   <div class="panel-body">
   <form method="POST" action="/auth/login">
   {!! csrf_field() !!}
   <div class="form-group">
   <label>Email</label>
-  <input type="email" name="email" value="{{ old('email') }}">
+  <input type="email" class="form-control" name="email" value="{{ old('email') }}">
   </div>
   <div class="form-group">
   <label>Password</label>
-  <input type="password" name="password" id="password">
+  <input type="password" class="form-control" name="password" id="password">
   </div>
   <div class="checkbox">
-  <label><input name="remember" type="checkbox"> Remember me</label>
+  <label><input name="remember" type="checkbox"> Recordar Usuario</label>
   </div>
   <div>  
- <button type="submit">Login</button>
+ <button type="submit" class="btn btn-primary" >Login</button> 
   </div>
    
   </form>
