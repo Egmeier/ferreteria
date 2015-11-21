@@ -36,10 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
 	return view('home');
     });
 
-    Route:: get('/calendario',function()
-    {
-	return view('calendario');
-    });
+    Route:: resource('calendario', 'eventoController');
 
     Route::resource('inventario', 'productosController');
 

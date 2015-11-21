@@ -12,6 +12,8 @@
   {!! Html::script('assets/js/jquery.dataTables.js') !!}
   {!! Html::script('assets/js/bootstrap.min.js') !!}
   {!! Html::script('assets/js/dataTables.bootstrap.js') !!}
+  {!! Html::style('assets/css/calendario.css') !!}
+  {!! Html::script('assets/js/calendario.js') !!}
 
 <style type="text/css">
 body{
@@ -77,10 +79,10 @@ body{
   	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Inventario</strong></button></span>
     </a>
     
-    
+     <a href="/inventario">
   	<button type="button" class="list-group-item">
   	<span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button></span>
-    
+    </a>
 
   	<button type="button" class="list-group-item">
   	<span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Documentos</strong></button></span>

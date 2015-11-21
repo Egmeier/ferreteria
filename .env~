@@ -1,11 +1,11 @@
 APP_ENV=local
 APP_DEBUG=true
-APP_KEY=SomeRandomString
+APP_KEY=Mo3LVPxCjGzvF9pKeG9f0rGVZ0miU7rB
 
 DB_HOST=localhost
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_DATABASE=ferreteria
+DB_USERNAME=root
+DB_PASSWORD=mysql
 
 CACHE_DRIVER=file
 SESSION_DRIVER=file
