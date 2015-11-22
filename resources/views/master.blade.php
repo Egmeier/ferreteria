@@ -79,9 +79,9 @@ body{
   	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Inventario</strong></button></span>
     </a>
     
-     <a href="/inventario">
+     <a href="/calendario">
   	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button></span>
+  	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Calendario</strong></button></span>
     </a>
 
   	<button type="button" class="list-group-item">
