@@ -12,16 +12,18 @@
   {!! Html::script('assets/js/jquery.dataTables.js') !!}
   {!! Html::script('assets/js/bootstrap.min.js') !!}
   {!! Html::script('assets/js/dataTables.bootstrap.js') !!}
+  {!! Html::style('assets/css/calendario.css') !!}
+  {!! Html::script('assets/js/calendario.js') !!}
 
 <style type="text/css">
 body{
-	background:rgba(171, 180, 183, 0.09);
+  background:rgba(171, 180, 183, 0.09);
 }
 </style>
 
 <style>
  nav.es1{
- 	background: #E6E3B9;
+  background: #E6E3B9;
  }
 
   
@@ -38,54 +40,61 @@ body{
 <body>
  <nav class="navbar navbar-default es1">
      <div class="container-fluid">
-     <div class="navbar-header">    		 
-       		 <img style="max-width:200px;"
+     <div class="navbar-header">         
+           <img style="max-width:200px;"
              src="logo2.gif">
-   			 
-    
       </div>
 
-    
-        	<div>
-        	<ul class="nav navbar-nav navbar-right">
-        	<a class="navbar-brand" href="#">
-        	<span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{Auth::User()->name}}</a>
 
-        	<a class="navbar-brand" href="/auth/logout">
-        	<span class="glyphicon glyphicon-off" aria-hidden="true"></span> Salir</a>
-        	</ul>
- 	    	</div>
- 	  </div>
+
+  <div class="btn-group"> 
+    <button type="button" class="btn btn-danger dropdown-toggle"
+      data-toggle="dropdown">
+      <span class= "glyphicon glyphicon-user"></span>
+      {{Auth::User()->name}}
+      <span class="caret"></span>
+    </button>
+          <ul class="dropdown-menu" role="menu">
+          <li><a href="/auth/register" >
+          Registrar</a></li>
+          <li><a href="/inventario">
+          Cambiar contraseña</a></li>
+          <li><a href="/auth/logout">
+          Salir</a></li>
+          </ul>
+  </div>
+  </div>
  </nav>
 
+
 <div class="col-md-2"> <!--COLUMNA 1-->
- 	<div class="row">
+  <div class="row">
   
  </div>
 
 
  <div class="row">
-  	<div class="list-group"> 
+    <div class="list-group"> 
     
     <a href="/home">
-  	<button type="button" class="list-group-item"> 
-  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Inicio</strong></button></span>
+    <button type="button" class="list-group-item"> 
+    <span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Inicio</strong></button></span>
     </a>
 
     <a href="/inventario">
-  	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Inventario</strong></button></span>
+    <button type="button" class="list-group-item">
+    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Inventario</strong></button></span>
     </a>
     
-    
-  	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button></span>
-    
+     <a href="/inventario">
+    <button type="button" class="list-group-item">
+    <span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button></span>
+    </a>
 
-  	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Documentos</strong></button></span>
-  	
-  	
+    <button type="button" class="list-group-item">
+    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Documentos</strong></button></span>
+    
+    
 </div>
  </div>
 </div>
@@ -94,22 +103,10 @@ body{
 @yield('content')
 </div>
 
-<!--arreglar esta fila, no permanece en la parte inferior de la pantalla-->
-<!--arreglar esta fila, no permanece en la parte inferior de la pantalla-->
-<!--arreglar esta fila, no permanece en la parte inferior de la pantalla-->
-<!--arreglar esta fila, no permanece en la parte inferior de la pantalla-->
-	<div class="navbar navbar-fixed-bottom text-center">
-	<span>Dirección: Calle Miguel León Prado #192, Comuna Santiago </span>
- 	<span style="padding-left: 20px;">Telefonos: 224019291 - 224019292 - 225563873</span>
- 	<span style="padding-left: 20px;">Contacto: ferreteriaalemeda@hotmail.com </span>
-	</div>
-
-
-
  
 
  <!-- Scripts -->
- {!! Html::script('assets/js/bootstrap.min.js') !!}
+
  <script>
 $(document).ready(function(){
             $('#MyTable').dataTable({

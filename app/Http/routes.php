@@ -43,6 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('inventario', 'productosController');
 
+    Route::resource('ordenescompra', 'ordenescompraController');
+
 });
 
 

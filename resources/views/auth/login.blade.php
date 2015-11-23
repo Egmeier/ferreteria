@@ -17,7 +17,7 @@
   @if (Session::has('errors'))
   <div class="alert alert-warning" role="alert">
   <ul>
-  <strong>Oops! Something went wrong : </strong>
+  <strong>Oops! Algo ha salido mal : </strong>
   @foreach ($errors->all() as $error)
   <li>{{ $error }}</li>
   @endforeach
@@ -27,8 +27,10 @@
   <div class="row">
   <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
+
   <div class="panel-heading"><span style= "font-size: 18px;" class= "glyphicon glyphicon-triangle-right"></span>
 <span style= "font-size: 20px;"> Iniciar Sesión</span></div>
+
   <div class="panel-body">
   <form method="POST" action="/auth/login">
   {!! csrf_field() !!}
@@ -37,14 +39,14 @@
   <input type="email" class="form-control" name="email" value="{{ old('email') }}">
   </div>
   <div class="form-group">
-  <label>Password</label>
+  <label>Contraseña</label>
   <input type="password" class="form-control" name="password" id="password">
   </div>
   <div class="checkbox">
   <label><input name="remember" type="checkbox"> Recordar Usuario</label>
   </div>
   <div>  
- <button type="submit" class="btn btn-primary" >Login</button> 
+ <button type="submit" class="btn btn-primary" >Acceder</button> 
   </div>
    
   </form>
