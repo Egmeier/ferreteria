@@ -7,16 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class eventosController extends Controller
+class ProductosOCController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($ordencompra_id)
     {
-        return view('calendario.index');
+        //
     }
 
     /**
@@ -24,7 +24,7 @@ class eventosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($ordencompra_id)
     {
         //
     }
@@ -35,9 +35,9 @@ class eventosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($ordencompra_id, Request $request)
     {
-        //aca llegan los datos dados x usuario
+        
     }
 
     /**
@@ -46,7 +46,7 @@ class eventosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($ordencompra_id, $id)
     {
         //
     }
@@ -57,9 +57,17 @@ class eventosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($ordencompra_id, $id)
     {
-        //
+        $orden_compra = OrdenCompra::find($orden_compra_id);
+        $producto = $orden_compra->productos()->find($id);
+
+        if (!$orden_compra || !$producto) abort(404);
+        
+//se selecciona el objeto y luego se vuelve a seleccionar a travez de la relavcion, en este caso seria productos
+        return view('ordencompra.productos.edit')
+            ->with('orden_compra', $ordencompra)
+            ->with('producto', $producto);
     }
 
     /**

@@ -1,7 +1,3 @@
-@extends('master')
-
-@section('content')
-
 <div align="right">
       <br/><br/>
       <div id="calendario">
@@ -43,5 +39,3 @@
            </form>
             </div>
           </div>
-
-@endsection

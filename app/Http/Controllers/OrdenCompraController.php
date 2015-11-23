@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class eventosController extends Controller
+class OrdenCompraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class eventosController extends Controller
      */
     public function index()
     {
-        return view('calendario.index');
+        //
     }
 
     /**
@@ -37,7 +37,7 @@ class eventosController extends Controller
      */
     public function store(Request $request)
     {
-        //aca llegan los datos dados x usuario
+        //
     }
 
     /**
