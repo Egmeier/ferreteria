@@ -24,14 +24,19 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/home',function()
     {
-	return view('home');
+	return redirect('venta');
     });
 
     Route:: resource('calendario', 'eventosController');
 
     Route::resource('inventario', 'productosController');
 
+
     Route::resource('ordenescompra', 'ordenescompraController');
+
+
+     Route::resource('venta', 'ventasController');
+     Route::post('inventario/vender','productosController@vender');
 
 });
 

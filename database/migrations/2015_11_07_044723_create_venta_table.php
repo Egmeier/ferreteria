@@ -15,8 +15,8 @@ class CreateVentaTable extends Migration
         Schema::create('ventas', function (Blueprint $table) {
             $table->increments('cod_venta');
             $table->float('monto_total');
-            $table->date('fecha');
-            $table->integer('id_cliente')->unsigned();
+            $table->timestamps();
+            $table->integer('id_cliente')->unsigned()->nullable();
             $table->foreign('id_cliente')->references('id_cliente')->on('clientes');
         }); 
     }

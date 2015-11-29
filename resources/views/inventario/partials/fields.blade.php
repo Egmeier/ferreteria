@@ -1,4 +1,9 @@
 <div class="form-group">
+    {!! Form::label('codigo', 'Código', ['for' => 'codigo'] ) !!}
+    {!! Form::text('codigo', null , ['class' => 'form-control', 'id_producto' => 'codigo', 'placeholder' => 'Escribe el codigo...' ]  ) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('descripcion', 'Descripcion', ['for' => 'descripcion'] ) !!}
     {!! Form::text('descripcion', null , ['class' => 'form-control', 'id_producto' => 'descripcion', 'placeholder' => 'Escribe la descripción...' ]  ) !!}
 </div>

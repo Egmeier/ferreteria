@@ -3,8 +3,8 @@
 <table class="table table-bordered dataTable" id="MyTable">
   <thead>
     <tr>
-        <th class="text-center">ID</th>
-        <th class="text-center">Descripcion</th>
+        <th class="text-center">Código</th>
+        <th class="text-center">Descripción</th>
         <th class="text-center">Tipo</th>
         <th class="text-center">Precio</th>
         <th class="text-center">Inventario</th>
@@ -16,7 +16,7 @@
   <tbody>
     @foreach($inventario as $producto)
         <tr>
-            <td class="text-center">{{ $producto->id_producto }}</td>
+            <td class="text-center">{{ $producto->codigo }}</td>
             <td class="text-center">{{ $producto->descripcion }}</td>
             <td class="text-center">{{ $producto->tipo }}</td>
             <td class="text-center">{{ $producto->precio }}</td>

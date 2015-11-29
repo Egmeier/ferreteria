@@ -42,6 +42,7 @@ class productosController extends Controller
         if(Auth::User()->hasRole(1))
         {
         $producto=new producto;
+        $producto->codigo= $request->input('codigo');
         $producto->descripcion= $request->input('descripcion');
         $producto->tipo= $request->input('tipo');
         $producto->precio= $request->input('precio');
@@ -61,9 +62,20 @@ class productosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_producto)
+    public function show($codigo)
     {
-        //
+        
+         //   $producto = producto::where($codigo,1)->first();
+           // $producto->toJson();
+            
+    }
+
+    public function vender(Request $request)
+    {
+         $producto =producto::where('codigo',$request->input('codigo'))->first();
+        return response()->json(
+            $producto->toJson()
+            );
     }
 
     /**
@@ -93,6 +105,7 @@ class productosController extends Controller
         if(Auth::User()->hasRole(1))
         {
         $producto=producto::find($id_producto);
+         $producto->codigo= $request->input('codigo');
         $producto->descripcion= $request->input('descripcion');
         $producto->tipo= $request->input('tipo');
         $producto->precio= $request->input('precio');

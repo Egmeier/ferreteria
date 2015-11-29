@@ -4,11 +4,12 @@
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="csrf-token" content="{{ csrf_token() }}">
  <title>Alameda y Cia</title>
  
   {!! Html::style('assets/css/bootstrap.css') !!}
   {!! Html::style('assets/css/dataTables.bootstrap.css') !!}
-  {!! Html::script('assets/js/jquery-2.1.4.min.js') !!}
+  {!! Html::script('assets/js/jquery-2.1.4.js') !!}
   {!! Html::script('assets/js/jquery.dataTables.js') !!}
   {!! Html::script('assets/js/bootstrap.min.js') !!}
   {!! Html::script('assets/js/dataTables.bootstrap.js') !!}
@@ -78,7 +79,7 @@ body{
     
     <a href="/home">
     <button type="button" class="list-group-item"> 
-    <span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Inicio</strong></button></span>
+    <span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Venta</strong></button></span>
     </a>
 
     <a href="/inventario">
@@ -105,9 +106,19 @@ body{
 
  
 
+
  <!-- Scripts -->
 
+
+ @yield('scripts')
+
  <script>
+$.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+});
+
 $(document).ready(function(){
             $('#MyTable').dataTable({
               language: {
@@ -118,5 +129,8 @@ $(document).ready(function(){
         });
 
 </script>
+<!-- Scripts -->
+
+
 </body>
 </html>
