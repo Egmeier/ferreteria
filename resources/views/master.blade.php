@@ -106,6 +106,17 @@ body{
 </div>
 
 <div style= "padding-left: 20px;"class="col-xs-10"><!--COLUMNA 2-->
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 @yield('content')
 </div>
 

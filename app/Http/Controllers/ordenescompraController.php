@@ -40,6 +40,12 @@ class ordenescompraController extends Controller
     public function store(Request $request)
     {
         
+        $this->validate($request, [
+        'fecha_entrega' => 'required|after:'.$request->input('fecha_solicitud'),
+        
+    ]);
+
+
        $ordencompra=new Ordencompra;
        $ordencompra->fecha_solicitud=$request->input('fecha_solicitud');
        $ordencompra->fecha_entrega=$request->input('fecha_entrega');

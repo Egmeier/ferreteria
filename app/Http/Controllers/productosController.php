@@ -39,8 +39,17 @@ class productosController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+        'codigo' => 'required|unique:productos|max:255',
+        
+    ]);
+
+
         if(Auth::User()->hasRole(1))
         {
+
+
         $producto=new producto;
         $producto->codigo= $request->input('codigo');
         $producto->descripcion= $request->input('descripcion');

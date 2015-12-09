@@ -16,8 +16,8 @@
    -->
      {!! Form::open([ 'route' => 'ordenescompra.store', 'method' => 'POST','onkeypress'=>'return pulsar(event)']) !!}
     <div class="form-group">
-     <label>Fecha solicitud</label><input type="date" name="fecha_solicitud" id="fecha_solicitud">
-     <label>Fecha entrega</label><input type="date" name="fecha_entrega" id="fecha_entrega">
+     <label>Fecha solicitud</label><input type="date" name="fecha_solicitud" id="fecha_solicitud" required>
+     <label>Fecha entrega</label><input type="date" name="fecha_entrega" id="fecha_entrega" required>
 
     <label>Cliente</label>
      <select name="lista">
@@ -95,7 +95,7 @@ alert("Ya existe");
       else
       {
         
-         texto_insertar='<tr id="'+codigo+'"><td><div class="form-group"><input type="text" name="codigo'+indice+'" class=form-control value="'+codigo+'" ></div></td><td><div class="form-group"> <input type="text" name="descripcion'+indice+'" class=form-control ></div></td><td><div class="form-group"><input type="number" name="cantidad'+indice+'" min="1" class=form-control></div></td><td><div><input type="button" class="btn btn-danger btn-xs" onClick="eliminarElemento(\''+codigo+'\');" ></div></td></tr>';
+         texto_insertar='<tr id="'+codigo+'"><td><div class="form-group"><input required type="text" name="codigo'+indice+'" class=form-control value="'+codigo+'" ></div></td><td><div class="form-group"> <input required type="text" name="descripcion'+indice+'" class=form-control ></div></td><td><div class="form-group"><input required type="number" name="cantidad'+indice+'" min="1" class=form-control></div></td><td><div><input required type="button" value="Borrar" class="btn btn-danger btn-xs" onClick="eliminarElemento(\''+codigo+'\');" ></div></td></tr>';
          //texto_insertar = '<p>' + etiqueta + ' ' + indice + ':<br><input type="text" name="' + nombreCampo + indice + '" /></p>';
          $("#cantidadFilas").val(indice);
          indice ++;

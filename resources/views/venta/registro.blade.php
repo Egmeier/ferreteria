@@ -7,7 +7,7 @@
     <tr>
         <th class="text-center">Código</th>
         <th class="text-center">Monto Total</th>
-        <th class="text-center">Cliente</th>
+        <!--<th class="text-center">Cliente</th>-->
         @if(Auth::User()->hasRole(1))
         <th class="text-center">Acciones</th>
         @endif
@@ -18,7 +18,7 @@
         <tr>
             <td class="text-center">{{ $Venta->cod_venta }}</td>
             <td class="text-center">{{ $Venta->monto_total }}</td>
-            <td class="text-center">{{ $Venta->id_cliente }}</td>
+           <!-- <td class="text-center">{{ $Venta->id_cliente }}</td> -->
             
 @if(Auth::User()->hasRole(1))
         

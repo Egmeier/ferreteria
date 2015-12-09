@@ -18,6 +18,8 @@ class clientesController extends Controller
      */
     public function index()
     {
+
+
         $clientes=Cliente::get();
         return view('cliente.index')->with('cliente',$clientes);
     }
@@ -41,7 +43,11 @@ class clientesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+        'rut' => 'required|unique:clientes|max:255',
         
+    ]);
+
         $cliente=new Cliente;
         $cliente->rut= $request->input('rut');
         $cliente->nombre= $request->input('nombre');

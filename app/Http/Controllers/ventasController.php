@@ -40,6 +40,13 @@ class ventasController extends Controller
      */
     public function store(Request $request)
     {
+
+
+        $this->validate($request, [
+        'cantidadFilas' => 'numeric|min:1',
+        
+    ]);
+
         $venta=new Venta;
         $venta->save();
         $monto_total=0;

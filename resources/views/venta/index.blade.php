@@ -15,7 +15,7 @@
 
    -->
      {!! Form::open([ 'route' => 'venta.store', 'method' => 'POST','onkeypress'=>'return pulsar(event)']) !!}
-     <input type="hidden" name="cantidadFilas" id="cantidadFilas" value="0">
+     <input type="hidden" type="number" name="cantidadFilas" id="cantidadFilas" value="0">
      <table class="table table-bordered dataTable" >
 
   <thead>
@@ -104,7 +104,7 @@ alert("Ya existe");
       else
       {
         
-         texto_insertar='<tr id="'+codigo+'"><input type="hidden" name="id_producto'+indice+'" class=form-control value="'+id+'" readonly><td><div class="form-group"><input type="text" name="codigo'+indice+'" class=form-control value="'+codigo+'" readonly></div></td><td><div class="form-group"> <input type="text" name="descripcion'+indice+'" class=form-control value="'+descripcion+'" readonly></div></td><td><div class="form-group"><input type="text" name="tipo'+indice+'" class=form-control value="'+tipo+'" readonly></div></td><td><div class="form-group"><input type="number" name="precio'+indice+'" class=form-control value="'+precio+'" readonly></div></td><td><div class="form-group"><input type="number" name="cantidad'+indice+'" min="1" max="'+cantidadMaxima+'" value="1" class=form-control></div></td><td><div><input type="button" class="btn btn-danger btn-xs" onClick="eliminarElemento(\''+codigo+'\');" value="Borrar"></div></td></tr>';
+         texto_insertar='<tr id="'+codigo+'"><input type="hidden" name="id_producto'+indice+'" class=form-control value="'+id+'" readonly><td><div class="form-group"><input required type="text" name="codigo'+indice+'" class=form-control value="'+codigo+'" readonly></div></td><td><div class="form-group"> <input required type="text" name="descripcion'+indice+'" class=form-control value="'+descripcion+'" readonly></div></td><td><div class="form-group"><input required type="text" name="tipo'+indice+'" class=form-control value="'+tipo+'" readonly></div></td><td><div class="form-group"><input required type="number" name="precio'+indice+'" class=form-control value="'+precio+'" readonly></div></td><td><div class="form-group"><input required type="number" name="cantidad'+indice+'" min="1" max="'+cantidadMaxima+'" value="1" class=form-control></div></td><td><div><input required type="button" class="btn btn-danger btn-xs" onClick="eliminarElemento(\''+codigo+'\');" value="Borrar"></div></td></tr>';
          //texto_insertar = '<p>' + etiqueta + ' ' + indice + ':<br><input type="text" name="' + nombreCampo + indice + '" /></p>';
          $("#cantidadFilas").val(indice);
          indice ++;
