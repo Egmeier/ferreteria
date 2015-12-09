@@ -56,10 +56,11 @@ body{
       <span class="caret"></span>
     </button>
           <ul class="dropdown-menu" role="menu">
+          <!--
           @if(Auth::User()->hasRole(1))
           <li><a href="auth/register" >
           Registrar</a></li>
-          @endif
+          @endif -->
           <li><a href="/auth/logout">
           Salir</a></li>
           </ul>
