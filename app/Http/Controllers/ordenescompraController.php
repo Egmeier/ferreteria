@@ -113,7 +113,9 @@ class ordenescompraController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ordencompra=Ordencompra::find($id);
+        $ordencompra->delete();
+        return redirect('ordenescompra/registro');
     }
 
     public function registro()
