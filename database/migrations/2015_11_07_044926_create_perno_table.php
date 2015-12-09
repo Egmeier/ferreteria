@@ -14,8 +14,11 @@ class CreatePernoTable extends Migration
     {
         Schema::create('pernos', function (Blueprint $table) {
             $table->increments('id_perno');
-            $table->string('codigo',20);
-            $table->string('nombre',20);
+            $table->integer('id_oc')->unsigned();
+            $table->string('codigo');
+            $table->string('descripcion');
+            $table->integer('cantidad');
+            $table->foreign('id_oc')->references('id_oc')->on('ordenescompra')->onDelete('cascade');
         }); 
     }
 

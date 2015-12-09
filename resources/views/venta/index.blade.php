@@ -16,7 +16,7 @@
    -->
      {!! Form::open([ 'route' => 'venta.store', 'method' => 'POST','onkeypress'=>'return pulsar(event)']) !!}
      <input type="hidden" name="cantidadFilas" id="cantidadFilas" value="0">
-     <table class="table table-bordered dataTable" id="MyTable">
+     <table class="table table-bordered dataTable" >
 
   <thead>
     <tr>
@@ -75,7 +75,7 @@ function pulsar(e) {
 
          $.ajax({
     // la URL para la petición
-    url : 'http://localhost:8000/inventario/vender',
+    url : 'http://localhost:8000/venta/ingresarProducto',
  
     // la información a enviar
     // (también es posible utilizar una cadena de datos)

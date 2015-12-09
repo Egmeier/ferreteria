@@ -30,13 +30,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route:: resource('calendario', 'eventosController');
 
     Route::resource('inventario', 'productosController');
-
-
+    
+Route::get('ordenescompra/registro','ordenescompraController@registro');
     Route::resource('ordenescompra', 'ordenescompraController');
 
 
+    Route::get('venta/registro','ventasController@registro');
      Route::resource('venta', 'ventasController');
-     Route::post('inventario/vender','productosController@vender');
+     Route::post('venta/ingresarProducto','ventasController@ingresarProducto');
+     Route::resource('cliente','clientesController');
 
 });
 

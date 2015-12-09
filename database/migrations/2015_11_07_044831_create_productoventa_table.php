@@ -16,7 +16,7 @@ class CreateProductoventaTable extends Migration
             $table->integer('cod_venta')->unsigned();
             $table->integer('id_producto')->unsigned();
             $table->integer('cantidad_venta');
-            $table->foreign('cod_venta')->references('cod_venta')->on('ventas');
+            $table->foreign('cod_venta')->references('cod_venta')->on('ventas')->onDelete('cascade');
             $table->foreign('id_producto')->references('id_producto')->on('productos');
         }); 
     }

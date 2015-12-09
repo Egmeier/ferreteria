@@ -43,7 +43,7 @@ body{
      <div class="container-fluid">
      <div class="navbar-header">         
            <img style="max-width:200px;"
-             src="logo2.gif">
+             src="/logo2.gif">
       </div>
 
 
@@ -80,6 +80,11 @@ body{
     <a href="/home">
     <button type="button" class="list-group-item"> 
     <span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Venta</strong></button></span>
+    </a>
+
+    <a href="/venta/registro">
+    <button type="button" class="list-group-item"> 
+    <span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Registro de Ventas</strong></button></span>
     </a>
 
     <a href="/inventario">

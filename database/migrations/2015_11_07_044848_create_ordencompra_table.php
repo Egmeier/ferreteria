@@ -17,9 +17,9 @@ class CreateOrdencompraTable extends Migration
             $table->date('fecha_solicitud');
             $table->date('fecha_entrega');
             $table->integer('id_cliente')->unsigned();
-            $table->integer('id_sucursal')->unsigned();
+            
             $table->foreign('id_cliente')->references('id_cliente')->on('clientes');
-            $table->foreign('id_sucursal')->references('id_sucursal')->on('sucursales');
+            
         }); 
     }
 

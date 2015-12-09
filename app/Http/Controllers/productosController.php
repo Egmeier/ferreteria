@@ -70,7 +70,7 @@ class productosController extends Controller
             
     }
 
-    public function vender(Request $request)
+    /*public function vender(Request $request)
     {
          $producto =producto::where('codigo',$request->input('codigo'))->first();
         return response()->json(

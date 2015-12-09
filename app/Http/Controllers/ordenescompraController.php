@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Perno;
+use App\Ordencompra;
 
 class ordenescompraController extends Controller
 {
@@ -16,8 +18,7 @@ class ordenescompraController extends Controller
      */
     public function index()
     {
-        $ordenescompra = ordecompra::get();
-        return view('ordenescompra.index')->with('ordenescompra', $ordenescompra);
+        return view('ordencompra.index');
     }
 
     /**
@@ -38,13 +39,29 @@ class ordenescompraController extends Controller
      */
     public function store(Request $request)
     {
-        $ordencompra = new ordencompra;
-        $ordencompra->nombre = $request->input('');
-        $pastel->sabor  = $request->input('sabor');
+        
+       $ordencompra=new Ordencompra;
+       $ordencompra->fecha_solicitud=$request->input('fecha_solicitud');
+       $ordencompra->fecha_entrega=$request->input('fecha_entrega');
+       $ordencompra->id_cliente=$request->input('lista');
+       $ordencompra->save(); 
 
-        $pastel->save();
 
-        return redirect()->route('pasteles.index');
+        $cantidadFilas=$request->input('cantidadFilas');
+        for ($i=1; $i <= $cantidadFilas; $i++) { 
+            
+            $perno=new Perno;
+            $perno->codigo=$request->input('codigo'.$i);
+            $perno->descripcion=$request->input('descripcion'.$i);
+            $perno->cantidad=$request->input('cantidad'.$i);
+            $perno->id_oc=$ordencompra->id_oc;
+            $perno->save();
+            
+        }
+
+
+      return redirect('ordenescompra');
+
     }
 
     /**
@@ -55,7 +72,8 @@ class ordenescompraController extends Controller
      */
     public function show($id)
     {
-        //
+        $ordencompra=Ordencompra::find($id);
+        return view('ordencompra.show')->with('ordencompra',$ordencompra);
     }
 
     /**
@@ -90,5 +108,12 @@ class ordenescompraController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function registro()
+    {
+        $ordencompra=Ordencompra::get();
+        return view('ordencompra.registro')->with('registro',$ordencompra);
+        
     }
 }

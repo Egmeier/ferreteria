@@ -12,7 +12,7 @@ class Venta extends Model
 
     public function productos()
     {
-        return $this->belongsToMany('App\producto','productosventa','cod_venta','id_producto');
+        return $this->belongsToMany('App\producto','productosventa','cod_venta','id_producto')->withPivot('cantidad_venta');
     }
 
     protected $fillable = ['monto_total'];

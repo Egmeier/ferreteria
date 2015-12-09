@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Venta;
 use App\producto;
+use Illuminate\Support\Facades\Auth;
 
 class ventasController extends Controller
 {
@@ -18,7 +19,7 @@ class ventasController extends Controller
      */
     public function index()
     {
-        return view('venta/index');
+        return view('venta.index');
     }
 
     /**
@@ -28,7 +29,7 @@ class ventasController extends Controller
      */
     public function create()
     {
-        //
+        return view('venta.registro');
     }
 
     /**
@@ -39,7 +40,7 @@ class ventasController extends Controller
      */
     public function store(Request $request)
     {
-        $venta=new venta;
+        $venta=new Venta;
         $venta->save();
         $monto_total=0;
 
@@ -75,7 +76,16 @@ class ventasController extends Controller
      */
     public function show($id)
     {
-        //
+        $venta=Venta::find($id);
+        return view('venta.show')->with('venta',$venta);
+    }
+
+    public function ingresarProducto(Request $request)
+    {
+         $producto =producto::where('codigo',$request->input('codigo'))->first();
+        return response()->json(
+            $producto->toJson()
+            );
     }
 
     /**
@@ -86,7 +96,9 @@ class ventasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $venta=Venta::find($id);
+        //return view('inventario.edit')->with('producto',$producto);
+        return $venta->producto();
     }
 
     /**
@@ -109,6 +121,28 @@ class ventasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $venta = Venta::find($id);
+
+       foreach ($venta->productos as $ventaproducto) {
+    //echo $producto->pivot->id_producto;
+    //echo $producto->inventario;
+
+        $producto=producto::find($ventaproducto->pivot->id_producto);
+    $producto->inventario=$producto->inventario + $ventaproducto->pivot->cantidad_venta;
+    $producto->save();
+
+
+        }
+
+
+      $venta->delete(); //borra la venta y la relacion producto venta
+      return redirect('venta/registro');
+    }
+
+    public function registro()
+    {
+        $ventas=venta::get();
+        return view('venta.registro')->with('registro',$ventas);
+        
     }
 }
