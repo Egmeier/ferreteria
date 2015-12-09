@@ -48,18 +48,18 @@ body{
 
 
 
-  <div class="btn-group"> 
-    <button type="button" class="btn btn-danger dropdown-toggle"
+  <div class="btn-group pull-right"> 
+    <button type="button" class="btn btn-danger navbar-btn dropdown-toggle "
       data-toggle="dropdown">
       <span class= "glyphicon glyphicon-user"></span>
       {{Auth::User()->name}}
       <span class="caret"></span>
     </button>
           <ul class="dropdown-menu" role="menu">
-          <li><a href="/auth/register" >
+          @if(Auth::User()->hasRole(1))
+          <li><a href="auth/register" >
           Registrar</a></li>
-          <li><a href="/inventario">
-          Cambiar contraseña</a></li>
+          @endif
           <li><a href="/auth/logout">
           Salir</a></li>
           </ul>
@@ -84,7 +84,7 @@ body{
 
     <a href="/venta/registro">
     <button type="button" class="list-group-item"> 
-    <span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Registro de Ventas</strong></button></span>
+    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Registro de Ventas</strong></button></span>
     </a>
 
     <a href="/inventario">
@@ -93,12 +93,18 @@ body{
     </a>
      <a href="/calendario">
   	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"><strong> Calendario</strong></button></span>
+  	<span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button></span>
     </a>
 
+    <a href="/ordenescompra">
   	<button type="button" class="list-group-item">
-  	<span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Documentos</strong></button></span>
-  	
+  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Orden Compra</strong></button></span>
+  	</a>
+
+    <a href="/ordenescompra/registro">
+    <button type="button" class="list-group-item">
+    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"><strong> Ver Orden Compra</strong></button></span>
+    </a>
   	
 
 </div>

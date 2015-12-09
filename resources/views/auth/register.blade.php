@@ -54,9 +54,11 @@
   </div>
 
   <div class="form-group">
-  <label>Rol</label>
-  <input type="number" class="form-control" name="rol">
+  <input type="radio" name="rol" value="1" checked> Administrador
+  <br>
+  <input type="radio" name="rol" value="0"> Vendedor
   </div>
+
 
  
   <div>  

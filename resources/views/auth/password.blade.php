@@ -12,8 +12,7 @@
 </head>
 
 <body>
-   
-  <div class="container">
+<div class="container">
   @if (Session::has('errors'))
   <div class="alert alert-warning" role="alert">
   <ul>
@@ -25,42 +24,33 @@
   </div>
   @endif
 
-  
-  <div class="row">
+<form method="POST" action="/password/email">
+    {!! csrf_field() !!}
+
+ <div class="row">
   <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
 
   <div class="panel-heading"><span style= "font-size: 18px;" class= "glyphicon glyphicon-triangle-right"></span>
-<span style= "font-size: 20px;"> Iniciar Sesión</span></div>
+<span style= "font-size: 20px;"> Recuperación Contraseña</span></div>
 
   <div class="panel-body">
-  <form method="POST" action="/auth/login">
-  {!! csrf_field() !!}
-  <div class="form-group">
-  <label>Email</label>
-  <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-  </div>
-  <div class="form-group">
-  <label>Contraseña</label>
-  <input type="password" class="form-control" name="password" id="password">
-  </div>
- 
-  <div>  
-        <button type="submit" class="btn btn-primary" >Acceder</button> 
-        </div>
- </form>
 
- <label> ¿Olvidaste tu contraseña?</label>
-  <div> 
-     <a href="/password/email"> 
-     <button type="submit" class="btn btn-primary" >Recuperar</button> 
-    </a> </div>
-   
- 
+    <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+    </div>
+
+     <div>  
+     <button type="submit" class="btn btn-primary" >Enviar</button> 
+     </div>
+
   </div> 
-  </div>
-  </div>
-  </div>
-  </div>
+
+</div>
+</div>
+</div>
+</form>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
 APP_ENV=local
 APP_DEBUG=true
-APP_KEY=Mo3LVPxCjGzvF9pKeG9f0rGVZ0miU7rB
+APP_KEY=384mSIo2tfW7v0bckHXowYUIOlO43Ldu
 
 DB_HOST=localhost
 DB_DATABASE=ferreteria
@@ -12,8 +12,8 @@ SESSION_DRIVER=file
 QUEUE_DRIVER=sync
 
 MAIL_DRIVER=smtp
-MAIL_HOST=mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=25
+MAIL_USERNAME=mailpruebaferralameda@gmail.com
+MAIL_PASSWORD=ferreteria2015
 MAIL_ENCRYPTION=null
