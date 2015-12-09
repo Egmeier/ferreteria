@@ -66,7 +66,8 @@ MYSQL Version 14.4
 	MAIL_NAME= FERR
 	MAIL_ENCRYPTION=tls
 
-5-Abrir la terminal posicionado en la carpeta ferreteria, ejecutar lo siguiente: 
+5-Abrir la terminal posicionado en la carpeta ferreteria, ejecutar lo siguiente:
+
 	composer install (Esto instalará las dependencias necesarias para el proyecto)
 	php artisan key:generate (Genera la KEY de la app)
 	php artisan migrate (Crea las tablas necesarias en la db)
