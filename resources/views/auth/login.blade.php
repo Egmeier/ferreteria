@@ -59,8 +59,13 @@
  
   </div> 
   </div>
+  <a href="/auth/register">Registrar usuario</a>
   </div>
+
   </div>
+
   </div>
+
+
 </body>
 </html>

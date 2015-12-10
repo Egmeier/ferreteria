@@ -9,12 +9,15 @@
  
   {!! Html::style('assets/css/bootstrap.css') !!}
   {!! Html::style('assets/css/dataTables.bootstrap.css') !!}
+  {!! Html::style('assets/css/responsive-calendar.css') !!}
   {!! Html::script('assets/js/jquery-2.1.4.js') !!}
   {!! Html::script('assets/js/jquery.dataTables.js') !!}
   {!! Html::script('assets/js/bootstrap.min.js') !!}
   {!! Html::script('assets/js/dataTables.bootstrap.js') !!}
   {!! Html::style('assets/css/calendario.css') !!}
   {!! Html::script('assets/js/calendario.js') !!}
+  {!! Html::script('assets/js/responsive-calendar.js') !!}
+
 
 <style type="text/css">
 body{
@@ -56,12 +59,17 @@ body{
       <span class="caret"></span>
     </button>
           <ul class="dropdown-menu" role="menu">
-          <!--
+          
           @if(Auth::User()->hasRole(1))
-          <li><a href="auth/register" >
+         <!-- <li><a href="/newuser" >
           Registrar</a></li>
-          @endif -->
-          <li> <a href="https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.cl/%3Fgfe_rd%3Dcr%26ei%3DFDZpVqikKZSRwASDlYGQAg%26gws_rd%3Dssl"> Correo</a></li>
+<<<<<<< Updated upstream
+           -->
+          <li> <a href="https://mail.google.com"> Correo</a></li>
+
+          @endif
+         
+
           <li><a href="/auth/logout">
           Salir</a></li>
           </ul>

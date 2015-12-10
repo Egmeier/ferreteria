@@ -49,6 +49,7 @@ Route::get('ordenescompra/registro','ordenescompraController@registro');
      Route::resource('venta', 'ventasController');
      Route::post('venta/ingresarProducto','ventasController@ingresarProducto');
      Route::resource('cliente','clientesController');
+    
 
 });
 

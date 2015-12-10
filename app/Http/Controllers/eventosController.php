@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Ordencompra;
 
 class eventosController extends Controller
 {
@@ -16,7 +17,9 @@ class eventosController extends Controller
      */
     public function index()
     {
-        return view('calendario.index');
+         $ordencompra=Ordencompra::get();
+        return view('calendario.index')->with('registro',$ordencompra);
+        
     }
 
     /**
