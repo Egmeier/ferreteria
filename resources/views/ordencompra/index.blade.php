@@ -5,9 +5,9 @@
 <h1 class="text-primary">Ordenes de Compra</h1>
 
 {!! Form::open() !!}
-<input type="text" id="ingresarCodigo" placeholder="Ingrese código de producto">
+<input type="text" id="ingresarCodigo" placeholder="Ingrese codigo perno">
 <button id="mascampos" class="btn btn-info">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 </button>
  {!! Form::close() !!}
     <!--<input type="text" id="ingresarCodigo">

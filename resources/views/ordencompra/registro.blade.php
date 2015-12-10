@@ -31,8 +31,8 @@
                 <button type="submit" class="btn btn-danger btn-xs">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
-                <a href="{{ url("/ordenescompra/".$ordencompra->id_oc) }}" class="btn btn-info btn-xs">
-                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <a href="{{ url("/ordenescompra/".$ordencompra->id_oc) }}" class="btn btn-warning btn-xs">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                 </a>
             </td>
 

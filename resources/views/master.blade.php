@@ -97,6 +97,11 @@ body{
   	<span class="glyphicon glyphicon-calendar" aria-hidden="true"><strong> Calendario</strong></button></span>
     </a>
 
+<a href="/cliente">
+    <button type="button" class="list-group-item">
+    <span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Clientes</strong></button></span>
+    </a>
+
     <a href="/ordenescompra">
   	<button type="button" class="list-group-item">
   	<span class="glyphicon glyphicon-align-left" aria-hidden="true"><strong> Orden Compra</strong></button></span>

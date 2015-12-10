@@ -50,7 +50,7 @@ return [
     ],
     'mimes'                => 'The :attribute must be a file of type: :values.',
     'min'                  => [
-        'numeric' => 'The :attribute must be at least :min.',
+        'numeric' => ':attribute debe ser al menos :min.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
         'string'  => ':attribute debe tener como mínimo :min caracteres.',
         'array'   => 'The :attribute must have at least :min items.',
@@ -73,7 +73,7 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
+    'unique'               => ':attribute Ya existe.',
     'url'                  => 'The :attribute format is invalid.',
 
     /*
