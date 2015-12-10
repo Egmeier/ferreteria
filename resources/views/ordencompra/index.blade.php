@@ -20,7 +20,7 @@
      <label>Fecha entrega</label><input type="date" name="fecha_entrega" id="fecha_entrega" required>
 
     <label>Cliente</label>
-     <select name="lista">
+     <select name="lista" required>
 
      <?php 
         $clientes=App\Cliente::all();

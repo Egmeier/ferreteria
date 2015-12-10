@@ -42,8 +42,10 @@ class ordenescompraController extends Controller
         
         $this->validate($request, [
         'fecha_entrega' => 'required|after:'.$request->input('fecha_solicitud'),
+        'cantidadFilas' => 'numeric|min:1',
         
     ]);
+        
 
 
        $ordencompra=new Ordencompra;

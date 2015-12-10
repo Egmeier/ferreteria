@@ -61,6 +61,7 @@ body{
           <li><a href="auth/register" >
           Registrar</a></li>
           @endif -->
+          <li> <a href="https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.cl/%3Fgfe_rd%3Dcr%26ei%3DFDZpVqikKZSRwASDlYGQAg%26gws_rd%3Dssl"> Correo</a></li>
           <li><a href="/auth/logout">
           Salir</a></li>
           </ul>
