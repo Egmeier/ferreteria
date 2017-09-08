@@ -10,7 +10,7 @@ class Cliente extends Model
     protected $primaryKey="id_cliente";
     public $timestamps = false;
 
- public function ordenescompra()
+ public function ordenescompras()
     {
         return $this->hasMany('App\Ordencompra','id_oc','id_cliente');
     }
