@@ -15,3 +15,5 @@ class Cliente extends Model
         return $this->hasMany('App\Ordencompra','id_oc','id_cliente');
     }
 }
+
+//Comentario1
